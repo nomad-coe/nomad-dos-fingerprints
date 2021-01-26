@@ -88,7 +88,10 @@ class DOSFingerprint():
         """
         grid_array = grid.grid()
         # cut the energy and dos to grid size
-        energy, dos = np.transpose([(e,d) for e,d in zip(energy, dos) if (e >= grid_array[0][0] and e <= grid_array[-1][0])])
+        energy_dos = np.transpose([(e,d) for e,d in zip(energy, dos) if (e >= grid_array[0][0] and e <= grid_array[-1][0])])
+        if len(energy_dos) != 2:
+            return [0, 0], ''
+        energy, dos = energy_dos
         # calculate fingerprint
         bin_fp = ''
         grid_index = 0
