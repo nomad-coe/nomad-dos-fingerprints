@@ -18,11 +18,14 @@ class DOSFingerprint():
         self.set_similarity_function(similarity_function, **kwargs)
 
     def calculate(self, dos_energies, dos_values, grid_id = 'dg_cut:56:-2:7:(-10, 5)', unit_cell_volume = 1, n_atoms = 1):
-        energy, dos = self._convert_dos(dos_energies, dos_values, unit_cell_volume = unit_cell_volume, n_atoms = n_atoms)
-        raw_energies, raw_dos = self._integrate_to_bins(energy, dos)
-        grid = Grid().create(grid_id = grid_id)
-        self.grid_id = grid.get_grid_id()
-        self.indices, self.bins = self._calculate_bytes(raw_energies, raw_dos, grid)
+        try:
+            energy, dos = self._convert_dos(dos_energies, dos_values, unit_cell_volume = unit_cell_volume, n_atoms = n_atoms)
+            raw_energies, raw_dos = self._integrate_to_bins(energy, dos)
+            grid = Grid().create(grid_id = grid_id)
+            self.grid_id = grid.get_grid_id()
+            self.indices, self.bins = self._calculate_bytes(raw_energies, raw_dos, grid)
+        except Exception:
+            pass
         return self
 
     def to_dict(self):
