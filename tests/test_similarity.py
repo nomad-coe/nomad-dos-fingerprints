@@ -30,4 +30,4 @@ def test_matching_of_spectra():
     fp = DOSFingerprint().calculate(data['dos_energies'], data['dos_values'])
     cut_fp = DOSFingerprint().calculate(cut_energies, [cut_dos])
     assert tanimoto_similarity(cut_fp, fp) == tanimoto_similarity(fp, cut_fp)
-    assert 1 - tanimoto_similarity(fp, cut_fp) < 1e-2  
+    assert 1 - tanimoto_similarity(fp, cut_fp) < 1e-2
