@@ -100,9 +100,7 @@ class DOSFingerprint():
         grid_index = 0
         for idx, grid_e in enumerate(grid_array):
             if grid_e[0] > energy[0]:
-                grid_index = idx - 1
-                if grid_index < 0:
-                    grid_index = 0
+                grid_index = max(idx - 1, 0)
                 break
         grid_start = grid_index
         fp_index = 0
