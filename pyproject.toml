@@ -68,4 +68,4 @@ skip-magic-trailing-comma = false
 line-ending = "auto"
 
 [tool.setuptools.packages.find]
-include = ["nomad_dos_fingerprints/*"]
+include = ["nomad_dos_fingerprints*"]
