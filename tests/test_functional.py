@@ -1,5 +1,8 @@
-from nomad_dos_fingerprints import DOSFingerprint, tanimoto_similarity
-import pytest, os, json
+from nomad_dos_fingerprints import DOSFingerprint
+from nomad_dos_fingerprints import tanimoto_similarity
+import pytest
+import os
+import json
 import numpy as np
 
 with open(os.path.join(os.path.dirname(__file__), 'fingerprint_generation_test_data.json'), 'r') as test_data_file:

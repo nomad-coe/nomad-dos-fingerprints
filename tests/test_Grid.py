@@ -1,4 +1,6 @@
-import pytest, json, os
+import pytest
+import json
+import os
 import numpy as np
 
 from nomad_dos_fingerprints import Grid

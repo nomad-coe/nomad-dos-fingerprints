@@ -22,7 +22,7 @@ def plot_FP_in_grid(byte_fingerprint, grid, show = True, label = '', axes = None
                 y.append(dos_value)
                 all_width.append(width)
             bit_position+=1
-    if axes == None:
+    if axes is None:
         plt.bar(x,y,width=all_width,align='edge', label = label, **kwargs)
     else:
         axes.bar(x,y,width=all_width,align='edge', label = label, **kwargs)

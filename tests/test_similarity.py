@@ -1,4 +1,6 @@
-import pytest, os, json
+import pytest
+import os
+import json
 from bitarray import bitarray
 from nomad_dos_fingerprints import tanimoto_similarity, DOSFingerprint, Grid
 from nomad_dos_fingerprints.DOSfingerprint import ELECTRON_CHARGE

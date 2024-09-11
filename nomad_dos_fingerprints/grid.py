@@ -4,7 +4,7 @@ class Grid():
 
     @staticmethod
     def create(grid_id = None, grid_type = 'dg_cut', mu = -2, sigma = 7, cutoff = (-10,5), num_bins = 56, original_stepsize = 0.05):
-        if grid_id == None:
+        if grid_id is None:
             self = Grid()
             self.grid_type = grid_type
             self.mu = mu
